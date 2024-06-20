@@ -1,0 +1,54 @@
+﻿<Window x:Class="lab13var9.WpfWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab13var9"
+        mc:Ignorable="d"
+        Title="Продуктовый" 
+        Height="450" 
+        Width="800" 
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Assetts/shop_logo.png">
+    <Border Background="#e7e1d4" CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="#610536" CornerRadius="15,15,0,0">
+                <TextBlock  HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#e7e1d4" FontSize="18" Margin="0 0 10 0" Cursor="Hand" MouseDown="appExit">✕</TextBlock>
+            </Border>
+            <Image Source="/Assetts/shop_logo.png" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 0" Width="25" Height="25"/>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="#610536" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Name="goProduct" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="100,5,100,5"
+                                Content="Товары" Style="{StaticResource mainButton}" Click="goProduct_Click"/>
+
+                        <Button Name="goStructure" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="100,5,100,5" 
+                                Content="Ингридиенты" Style="{StaticResource mainButton}" Click="goStructure_Click"/>
+                    </Grid>
+                </Border>
+
+                <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

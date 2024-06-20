@@ -1,0 +1,54 @@
+﻿<Window x:Class="lab13var9.WpfWindows.WindowOpenProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab13var9.WpfWindows"
+        mc:Ignorable="d"
+        Title="Продукт"         
+        Height="350" 
+        Width="300" 
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Assetts/shop_logo.png">
+    <Border Background="#e7e1d4" CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="#610536" CornerRadius="15,15,0,0">
+                <TextBlock  HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#e7e1d4" FontSize="18" Margin="0 0 10 0"
+                            Cursor="Hand" MouseDown="appExit">✕</TextBlock>
+            </Border>
+            <Image Source="/Assetts/shop_logo.png" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 0" Width="25" Height="25"/>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Name="txtProduct" Text="Продукт: " VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="10,10,10,10"
+                           FontSize="16" FontWeight="SemiBold" Foreground="#1e1c1c"/>
+
+                <DataGrid Name="dgStructures" 
+               Grid.Row="1"
+               Style="{StaticResource dataGridStyle}"
+               ColumnHeaderStyle="{StaticResource CustomDataGridColumnHeaderStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Наименование" Binding="{Binding Structure_Name}"/>
+                        <DataGridTextColumn Header="Количество" Binding="{Binding Amount}"/>
+                        <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
