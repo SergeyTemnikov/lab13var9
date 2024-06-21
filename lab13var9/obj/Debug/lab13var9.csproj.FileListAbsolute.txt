@@ -33,3 +33,5 @@ C:\Users\SergeyT\source\repos\lab13var9\lab13var9\obj\Debug\WpfWindows\WindowAdd
 C:\Users\SergeyT\source\repos\lab13var9\lab13var9\obj\Debug\WpfWindows\WindowOpenStructure.baml
 C:\Users\SergeyT\source\repos\lab13var9\lab13var9\obj\Debug\WpfWindows\WindowOpenProduct.baml
 C:\Users\SergeyT\source\repos\lab13var9\lab13var9\obj\Debug\lab13var9.csproj.Up2Date
+C:\Users\SergeyT\source\repos\lab13var9\lab13var9\obj\Debug\WpfWindows\WindowAddProduct.g.cs
+C:\Users\SergeyT\source\repos\lab13var9\lab13var9\obj\Debug\WpfWindows\WindowAddProduct.baml

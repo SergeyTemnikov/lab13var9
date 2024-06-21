@@ -32,7 +32,9 @@ namespace lab13var9.WpfWindows
 
             txtStructure.Text += structure.Structure_Name;
 
-            dgProducts.ItemsSource = db.Products.Where(x => x.Id_Product == structure.Id_Product).ToList();
+            var products = db.ProductsStrucutres.Where(x => x.Id_Structure == structure.Id_Structure).Select(x => x.Id_Products).ToList();
+
+            dgProducts.ItemsSource = db.Products.Where(x => products.Contains(x.Id_Product)).ToList();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

@@ -60,5 +60,13 @@ namespace lab13var9.WpfWindows.Pages
         {
             OpenProduct();
         }
+
+        private void btnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAddProduct window = new WindowAddProduct(db);
+            window.ShowDialog();
+            dgProducts.ItemsSource = null;
+            dgProducts.ItemsSource = db.Products.ToList();
+        }
     }
 }

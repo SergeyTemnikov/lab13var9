@@ -82,6 +82,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProductsModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MyDatabase\ProductsStrucutres.cs">
+      <DependentUpon>ProductsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyDatabase\Structures.cs">
       <DependentUpon>ProductsModel.tt</DependentUpon>
     </Compile>
@@ -93,6 +96,9 @@
     </Compile>
     <Compile Include="WpfWindows\Pages\PageStructure.xaml.cs">
       <DependentUpon>PageStructure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfWindows\WindowAddProduct.xaml.cs">
+      <DependentUpon>WindowAddProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="WpfWindows\WindowAddStructure.xaml.cs">
       <DependentUpon>WindowAddStructure.xaml</DependentUpon>
@@ -126,6 +132,10 @@
     <Page Include="WpfWindows\Pages\PageStructure.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WpfWindows\WindowAddProduct.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="WpfWindows\WindowAddStructure.xaml">
       <SubType>Designer</SubType>

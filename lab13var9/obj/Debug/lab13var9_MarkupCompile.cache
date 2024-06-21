@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\SergeyT\source\repos\lab13var9\lab13var9\App.xaml
-71179130890
+8167735770
 2971483803
-16-1365267920
+18-2136240667
 181522605779
-WpfWindows\MainWindow.xaml;WpfWindows\Pages\MainPage.xaml;WpfWindows\Pages\PageProducts.xaml;WpfWindows\Pages\PageStructure.xaml;WpfWindows\WindowAddStructure.xaml;WpfWindows\WindowOpenStructure.xaml;WpfWindows\WindowOpenProduct.xaml;
+WpfWindows\MainWindow.xaml;WpfWindows\Pages\MainPage.xaml;WpfWindows\Pages\PageProducts.xaml;WpfWindows\Pages\PageStructure.xaml;WpfWindows\WindowAddProduct.xaml;WpfWindows\WindowAddStructure.xaml;WpfWindows\WindowOpenStructure.xaml;WpfWindows\WindowOpenProduct.xaml;
 
 False
 

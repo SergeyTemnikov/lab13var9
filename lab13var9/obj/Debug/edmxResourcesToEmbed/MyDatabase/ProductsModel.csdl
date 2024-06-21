@@ -1,48 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ProductsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProductsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Products" EntityType="ProductsModel.Products" />
+    <EntitySet Name="ProductsStrucutres" EntityType="ProductsModel.ProductsStrucutres" />
+    <EntitySet Name="Structures" EntityType="ProductsModel.Structures" />
+    <AssociationSet Name="FK_ProductsStrucutres_Products" Association="ProductsModel.FK_ProductsStrucutres_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductsStrucutres" EntitySet="ProductsStrucutres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductsStrucutres_Structures" Association="ProductsModel.FK_ProductsStrucutres_Structures">
+      <End Role="Structures" EntitySet="Structures" />
+      <End Role="ProductsStrucutres" EntitySet="ProductsStrucutres" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Products">
     <Key>
       <PropertyRef Name="Id_Product" />
     </Key>
     <Property Name="Id_Product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Articul" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Product_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Articul" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Weight" Type="Int32" Nullable="false" />
     <Property Name="Volume" Type="Int32" Nullable="false" />
-    <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Barcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="Structures" Relationship="Self.FK_Structures_Products" FromRole="Products" ToRole="Structures" />
+    <NavigationProperty Name="ProductsStrucutres" Relationship="ProductsModel.FK_ProductsStrucutres_Products" FromRole="Products" ToRole="ProductsStrucutres" />
+  </EntityType>
+  <EntityType Name="ProductsStrucutres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Products" Type="Int32" />
+    <Property Name="Id_Structure" Type="Int32" />
+    <NavigationProperty Name="Products" Relationship="ProductsModel.FK_ProductsStrucutres_Products" FromRole="ProductsStrucutres" ToRole="Products" />
+    <NavigationProperty Name="Structures" Relationship="ProductsModel.FK_ProductsStrucutres_Structures" FromRole="ProductsStrucutres" ToRole="Structures" />
   </EntityType>
   <EntityType Name="Structures">
     <Key>
       <PropertyRef Name="Id_Structure" />
     </Key>
     <Property Name="Id_Structure" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Structure_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Id_Product" Type="Int32" />
-    <NavigationProperty Name="Products" Relationship="Self.FK_Structures_Products" FromRole="Structures" ToRole="Products" />
+    <Property Name="Structure_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="ProductsStrucutres" Relationship="ProductsModel.FK_ProductsStrucutres_Structures" FromRole="Structures" ToRole="ProductsStrucutres" />
   </EntityType>
-  <Association Name="FK_Structures_Products">
-    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
-    <End Role="Structures" Type="Self.Structures" Multiplicity="*" />
+  <Association Name="FK_ProductsStrucutres_Products">
+    <End Type="ProductsModel.Products" Role="Products" Multiplicity="0..1" />
+    <End Type="ProductsModel.ProductsStrucutres" Role="ProductsStrucutres" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Products">
         <PropertyRef Name="Id_Product" />
       </Principal>
-      <Dependent Role="Structures">
-        <PropertyRef Name="Id_Product" />
+      <Dependent Role="ProductsStrucutres">
+        <PropertyRef Name="Id_Products" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ProductsEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Products" EntityType="Self.Products" />
-    <EntitySet Name="Structures" EntityType="Self.Structures" />
-    <AssociationSet Name="FK_Structures_Products" Association="Self.FK_Structures_Products">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Structures" EntitySet="Structures" />
-    </AssociationSet>
-  </EntityContainer>
+  <Association Name="FK_ProductsStrucutres_Structures">
+    <End Type="ProductsModel.Structures" Role="Structures" Multiplicity="0..1" />
+    <End Type="ProductsModel.ProductsStrucutres" Role="ProductsStrucutres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Structures">
+        <PropertyRef Name="Id_Structure" />
+      </Principal>
+      <Dependent Role="ProductsStrucutres">
+        <PropertyRef Name="Id_Structure" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

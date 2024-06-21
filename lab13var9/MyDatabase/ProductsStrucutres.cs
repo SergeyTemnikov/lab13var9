@@ -12,20 +12,13 @@ namespace lab13var9.MyDatabase
     using System;
     using System.Collections.Generic;
     
-    public partial class Structures
+    public partial class ProductsStrucutres
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Structures()
-        {
-            this.ProductsStrucutres = new HashSet<ProductsStrucutres>();
-        }
+        public int Id { get; set; }
+        public Nullable<int> Id_Products { get; set; }
+        public Nullable<int> Id_Structure { get; set; }
     
-        public int Id_Structure { get; set; }
-        public string Structure_Name { get; set; }
-        public decimal Amount { get; set; }
-        public decimal Price { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductsStrucutres> ProductsStrucutres { get; set; }
+        public virtual Products Products { get; set; }
+        public virtual Structures Structures { get; set; }
     }
 }

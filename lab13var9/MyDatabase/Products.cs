@@ -17,7 +17,7 @@ namespace lab13var9.MyDatabase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Products()
         {
-            this.Structures = new HashSet<Structures>();
+            this.ProductsStrucutres = new HashSet<ProductsStrucutres>();
         }
     
         public int Id_Product { get; set; }
@@ -30,6 +30,6 @@ namespace lab13var9.MyDatabase
         public byte[] Photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Structures> Structures { get; set; }
+        public virtual ICollection<ProductsStrucutres> ProductsStrucutres { get; set; }
     }
 }

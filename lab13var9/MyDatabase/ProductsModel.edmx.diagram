@@ -5,9 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d2218efd33d443f68c351a3422e55f98" Name="Diagram1">
-        <EntityTypeShape EntityType="ProductsModel.Products" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductsModel.Structures" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <AssociationConnector Association="ProductsModel.FK_Structures_Products" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProductsModel.Products" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="ProductsModel.ProductsStrucutres" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="ProductsModel.Structures" Width="1.5" PointX="0.75" PointY="5.375" />
+        <AssociationConnector Association="ProductsModel.FK_ProductsStrucutres_Products" />
+        <AssociationConnector Association="ProductsModel.FK_ProductsStrucutres_Structures" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

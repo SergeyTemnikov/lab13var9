@@ -4,25 +4,33 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="ProductsModel.Products">
         <MappingFragment StoreEntitySet="Products">
-          <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
-          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
-          <ScalarProperty Name="Articul" ColumnName="Articul" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Weight" ColumnName="Weight" />
-          <ScalarProperty Name="Volume" ColumnName="Volume" />
-          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
           <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Articul" ColumnName="Articul" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductsStrucutres">
+      <EntityTypeMapping TypeName="ProductsModel.ProductsStrucutres">
+        <MappingFragment StoreEntitySet="ProductsStrucutres">
+          <ScalarProperty Name="Id_Structure" ColumnName="Id_Structure" />
+          <ScalarProperty Name="Id_Products" ColumnName="Id_Products" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Structures">
       <EntityTypeMapping TypeName="ProductsModel.Structures">
         <MappingFragment StoreEntitySet="Structures">
-          <ScalarProperty Name="Id_Structure" ColumnName="Id_Structure" />
-          <ScalarProperty Name="Structure_Name" ColumnName="Structure_Name" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Structure_Name" ColumnName="Structure_Name" />
+          <ScalarProperty Name="Id_Structure" ColumnName="Id_Structure" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

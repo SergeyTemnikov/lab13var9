@@ -26,6 +26,7 @@ namespace lab13var9.MyDatabase
         }
     
         public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<ProductsStrucutres> ProductsStrucutres { get; set; }
         public virtual DbSet<Structures> Structures { get; set; }
     }
 }

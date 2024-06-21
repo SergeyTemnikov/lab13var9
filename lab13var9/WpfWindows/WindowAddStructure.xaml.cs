@@ -28,8 +28,6 @@ namespace lab13var9.WpfWindows
         {
             InitializeComponent();
             this.db = db;
-
-            cmbProduct.ItemsSource = db.Products.ToList();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -49,8 +47,7 @@ namespace lab13var9.WpfWindows
         {
             if(string.IsNullOrEmpty(txbName.Text)||
                 string.IsNullOrEmpty(txbAmount.Text)||
-                string.IsNullOrEmpty(txbPrice.Text)||
-                string.IsNullOrEmpty(cmbProduct.Text))
+                string.IsNullOrEmpty(txbPrice.Text))
             {
                 MessageBox.Show("Не все поля заполнены!");
             }
@@ -75,7 +72,6 @@ namespace lab13var9.WpfWindows
             {
                 MessageBox.Show("Поле количества заполнено не правильно!");
             }
-            structure.Products = cmbProduct.SelectedValue as Products;
             try
             {
                 db.Structures.Add(structure);
